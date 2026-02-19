@@ -1,160 +1,210 @@
-/* ================= WRAPPER ================= */
-
 .wrapper {
-  width: 100%;
-  background: transparent;
-  padding:  0;
-  margin-top: 30px;
+  width: min(1880px, 99%);
+  margin: 24px auto 0;
+  position: relative;
 }
 
-/* ================= WHY US TOP ================= */
+.whySticky {
+  position: sticky;
+  top: 86px;
+  z-index: 1;
+}
 
 .whyCard {
-  width: 92%;
-  margin: auto;
-  background: linear-gradient(135deg,#1a1a1a,#0f0f0f);
-  padding: 20px 6%;
-  border-radius: 18px;
-  border: 1px solid rgba(255,140,40,0.2);
-  box-shadow:
-    0 0 60px rgba(255,140,40,0.05),
-    inset 0 0 40px rgba(255,140,40,0.05);
+  background: #ff4f16;
+  border-radius: 4px;
+  padding: clamp(34px, 4.5vw, 78px) clamp(24px, 4vw, 84px) 70px;
+  min-height: calc(100vh - 86px);
 }
 
-.titleOrange {
-  font-size: 80px;
-  font-weight: 800;
-  color: rgba(255,180,90,0.15);
-  margin-bottom: 60px;
-  letter-spacing: 6px;
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-/* ================= WHY CARDS ================= */
+.title {
+  margin: 0;
+  font-size: clamp(52px, 6.4vw, 104px);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.42);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hexIcon {
+  width: 66px;
+  height: 72px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.74);
+  flex-shrink: 0;
+}
+
+.hexIcon span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  line-height: 1;
+}
 
 .columns {
+  margin-top: clamp(64px, 10vw, 160px);
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 40px;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: clamp(28px, 2.4vw, 72px);
 }
 
 .whyCardBox {
-  background: rgba(15,15,15,0.85);
-  backdrop-filter: blur(6px);
-  padding: 40px 30px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,140,40,0.3);
-  transition: all 0.5s ease;
-  box-shadow: 0 0 25px rgba(255,140,40,0.06);
-}
-
-.whyCardBox:hover {
-  transform: translateY(-12px);
-  box-shadow:
-    0 0 50px rgba(243, 123, 18, 0.4),
-    inset 0 0 30px rgba(229, 114, 14, 0.15);
+  max-width: 430px;
 }
 
 .cardTitle {
-  font-size: 20px;
+  margin: 0 0 14px;
+  font-size: clamp(34px, 2.2vw, 50px);
   font-weight: 600;
-  color: #ff7a18;
-  margin-bottom: 18px;
-  letter-spacing: 1px;
+  color: #ffffff;
+  letter-spacing: 2px;
 }
 
 .cardText {
-  font-size: 15px;
-  color: #dcdcdc;
-  line-height: 1.7;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(20px, 1.2vw, 34px);
+  line-height: 1.45;
+  max-width: 44ch;
 }
 
-/* ================= CAREERS SECTION ================= */
-/* ================= SC SECTION ================= */
-
-.scSection {
-  width: 100%;
-  padding: 120px 0;
+.careersWrap {
+  margin-top: 0;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 40px;
+  will-change: transform;
 }
 
-/* ================= CONNECTED CARD ================= */
+.careersCard {
+  background: #c4c9cc;
+  border-radius: 4px;
+  padding: clamp(34px, 4.5vw, 78px) clamp(24px, 4vw, 84px) 70px;
+}
 
-.scConnectedCard {
-  width: 90%;
-  margin: auto;
+.careersCard .title {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.careersCard .hexIcon {
+  color: rgba(255, 255, 255, 0.84);
+  border-color: rgba(255, 255, 255, 0.84);
+}
+
+.careersGrid {
+  margin-top: clamp(42px, 4vw, 70px);
   display: grid;
-  grid-template-columns: 1fr 1px 1fr 1px 1fr;
-  background: linear-gradient(135deg,#141414,#0c0c0c);
-  border-radius: 24px;
-  padding: 70px 5%;
-  border: 1px solid rgba(255,140,40,0.25);
-  box-shadow:
-    0 0 80px rgba(255,140,40,0.08),
-    inset 0 0 40px rgba(255,140,40,0.05);
+  grid-template-columns: minmax(280px, 540px) minmax(340px, 1fr);
+  gap: clamp(28px, 4.4vw, 110px);
+  align-items: start;
+}
+
+.photoBlock {
   position: relative;
   overflow: hidden;
-  transition: all 0.5s ease;
+  width: 100%;
+  min-height: 620px;
+  background: #9ca3a9;
 }
 
-/* Glow Hover */
-.scConnectedCard:hover {
-  box-shadow:
-    0 0 120px rgba(255,140,40,0.25),
-    inset 0 0 60px rgba(255,140,40,0.1);
+.photoImage {
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.03);
+  transform: scale(1.015);
 }
 
-/* ================= COLUMNS ================= */
-
-.scColumn {
-  padding: 0 30px;
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22));
+  pointer-events: none;
 }
 
-.scColumn h2 {
-  font-size: 32px;
-  margin-bottom: 25px;
-  color: #ff9a2a;
-  font-weight: 600;
+.careerContent {
+  color: #111;
+  max-width: 760px;
 }
 
-.scColumn p {
-  font-size: 15px;
-  color: #d6d6d6;
-  line-height: 1.8;
-  margin-bottom: 20px;
+.careerHeading {
+  margin: 8px 0 20px;
+  font-size: clamp(34px, 2.2vw, 52px);
+  letter-spacing: 4px;
+  font-weight: 700;
 }
 
-.scColumn ul {
-  padding-left: 18px;
+.careerContent p {
+  margin: 0 0 26px;
+  font-size: clamp(22px, 1.18vw, 30px);
+  line-height: 1.5;
 }
 
-.scColumn li {
-  margin-bottom: 12px;
-  font-size: 14.5px;
-  color: #cfcfcf;
-  line-height: 1.7;
+.openPositionsBtn {
+  border: 0;
+  border-radius: 7px;
+  background: #ff4f16;
+  color: #090909;
+  padding: 14px 24px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-/* Divider Line */
-.divider {
-  background: linear-gradient(to bottom,
-    transparent,
-    rgba(255,140,40,0.4),
-    transparent);
-  width: 1px;
-}
+@media (max-width: 1200px) {
+  .whySticky {
+    position: relative;
+    top: 0;
+  }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1100px) {
-  .scConnectedCard {
+  .columns {
     grid-template-columns: 1fr;
-    gap: 50px;
   }
 
-  .divider {
-    display: none;
+  .careersGrid {
+    grid-template-columns: 1fr;
   }
 
-  .scColumn {
-    padding: 0;
+  .photoBlock {
+    min-height: 420px;
+    max-width: 700px;
+  }
+
+  .photoImage {
+    min-height: 420px;
+  }
+
+  .whyCard {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 97%;
+  }
+
+  .careersWrap {
+    margin-top: 12px;
+    transform: none !important;
+  }
+
+  .openPositionsBtn {
+    width: 100%;
+    font-size: 18px;
   }
 }

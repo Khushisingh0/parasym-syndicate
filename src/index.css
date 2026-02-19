@@ -84,3 +84,41 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+
+/* Global heading right-to-left character reveal */
+.global-heading-rtl .global-heading-char {
+  display: inline-block;
+  transform: translateX(0.5em) rotateY(180deg);
+  transform-origin: center;
+  opacity: 0;
+  filter: blur(2px);
+  transition:
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease,
+    filter 0.6s ease;
+  transition-delay: var(--char-delay, 0ms);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+.global-heading-rtl .global-heading-char.space {
+  transform: none;
+  opacity: 1;
+  filter: none;
+}
+
+.global-heading-rtl.global-heading-inview .global-heading-char {
+  transform: translateX(0) rotateY(0deg);
+  opacity: 1;
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-heading-rtl .global-heading-char,
+  .global-heading-rtl.global-heading-inview .global-heading-char {
+    transform: none;
+    opacity: 1;
+    filter: none;
+    transition: none;
+  }
+}

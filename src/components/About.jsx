@@ -2,17 +2,18 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "../style/about.module.css";
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const ref = useRef();
 
- useEffect(() => {
-            AOS.init({ duration: 1000, once: true }); 
-          }, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   useEffect(() => {
     if (!ref.current) return;
 
@@ -39,24 +40,21 @@ export default function About() {
 
   return (
     <section ref={ref} id="about" className={styles.section}>
-      
-      {/* ================= SECTION 1 ================= */}
       <div className={styles.container}>
-        <div className={styles.leftContent}           data-aos="fade-right"
->
+        <div className={styles.leftContent} data-aos="fade-right">
           <h2 className={styles.title}>About</h2>
 
           <p className={styles.copy}>
             Parasym Syndicate is a private intelligence and security institution
             that designs and operates a unified, multi-domain intelligence
-            platform. The organization addresses modern risk environments
-            where threats do not exist in isolation.
+            platform. The organization addresses modern risk environments where
+            threats do not exist in isolation.
           </p>
 
           <p className={styles.copy}>
             Financial crime, cyber operations, disinformation, geopolitical
             pressure, infrastructure fragility, and social instability
-            increasingly intersect—rendering fragmented tools ineffective.
+            increasingly intersect - rendering fragmented tools ineffective.
           </p>
 
           <p className={styles.copy}>
@@ -66,20 +64,53 @@ export default function About() {
           </p>
         </div>
 
-        <div /> {/* Right empty */}
+        <div className={styles.visualWrap} data-aos="fade-left">
+          <div className={`${styles.cyberVisual} ${styles.visualPrimary}`}>
+            <div className={styles.gridPattern} />
+            <div className={styles.radarRing} />
+            <div className={`${styles.node} ${styles.nodeA}`} />
+            <div className={`${styles.node} ${styles.nodeB}`} />
+            <div className={`${styles.node} ${styles.nodeC}`} />
+            <div className={styles.packetStream}>
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className={styles.visualOverlay} />
+            <div className={styles.scanLine} />
+            <span className={`${styles.chip} ${styles.chipTop}`}>THREAT MAP</span>
+            <span className={`${styles.chip} ${styles.chipBottom}`}>ZERO TRUST</span>
+          </div>
+        </div>
       </div>
 
-      {/* ================= SECTION 2 ================= */}
       <div className={`${styles.container} ${styles.platformRow}`}>
-        <div /> {/* LEFT 50% empty space */}
+        <div className={styles.visualWrap} data-aos="fade-right">
+          <div className={`${styles.cyberVisual} ${styles.visualSecondary}`}>
+            <div className={styles.gridPattern} />
+            <div className={styles.hudCircle} />
+            <div className={styles.dataBars}>
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className={styles.traceLine} />
+            <div className={styles.visualOverlay} />
+            <div className={styles.scanLine} />
+            <span className={`${styles.chip} ${styles.chipTop}`}>ACTIVE DEFENSE</span>
+            <span className={`${styles.chip} ${styles.chipBottom}`}>AI FORENSICS</span>
+          </div>
+        </div>
 
-        <div className={styles.rightContent}           data-aos="fade-left"
->
+        <div className={styles.rightContent} data-aos="fade-left">
           <h3 className={styles.subTitle}>The Parasym Platform</h3>
 
           <p className={styles.copy}>
-            Parasym operates as a single, integrated intelligence platform
-            rather than a collection of standalone tools.
+            Parasym operates as a single, integrated intelligence platform rather
+            than a collection of standalone tools.
           </p>
 
           <ul className={styles.list}>
@@ -90,16 +121,16 @@ export default function About() {
           </ul>
 
           <p className={styles.copy}>
-               This architecture ensures consistency across domains and prevents
+            This architecture ensures consistency across domains and prevents
             conflicting assessments. Intelligence produced in one domain
             automatically informs others, allowing financial, informational,
             behavioral, and geopolitical signals to be evaluated together.
           </p>
 
           <p className={styles.copy}>
-            The platform is designed to scale across enterprise, national,
-            and multi-agency environments while maintaining strict access
-            control and auditability.
+            The platform is designed to scale across enterprise, national, and
+            multi-agency environments while maintaining strict access control and
+            auditability.
           </p>
         </div>
       </div>

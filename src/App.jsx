@@ -36,6 +36,70 @@ function App() {
     }
   }, [loading]);
 
+  useEffect(() => {
+    if (loading) return;
+
+    const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+    const animatedHeadings = [];
+
+    headings.forEach((heading) => {
+      const rawText = heading.textContent ?? "";
+      if (!rawText.trim()) return;
+
+      heading.dataset.originalHeading = rawText;
+      heading.setAttribute("aria-label", rawText.trim());
+      heading.textContent = "";
+      heading.classList.add("global-heading-rtl");
+
+      const chars = Array.from(rawText);
+      chars.forEach((char, index) => {
+        const span = document.createElement("span");
+        span.className = "global-heading-char";
+        span.style.setProperty("--char-delay", `${(chars.length - 1 - index) * 36}ms`);
+        span.setAttribute("aria-hidden", "true");
+
+        if (char === " ") {
+          span.classList.add("space");
+          span.innerHTML = "&nbsp;";
+        } else {
+          span.textContent = char;
+        }
+
+        heading.appendChild(span);
+      });
+
+      animatedHeadings.push(heading);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle(
+            "global-heading-inview",
+            entry.isIntersecting
+          );
+        });
+      },
+      {
+        threshold: 0.28,
+        rootMargin: "0px 0px -12% 0px",
+      }
+    );
+
+    animatedHeadings.forEach((heading) => observer.observe(heading));
+
+    return () => {
+      observer.disconnect();
+      animatedHeadings.forEach((heading) => {
+        heading.classList.remove("global-heading-rtl", "global-heading-inview");
+        if (heading.dataset.originalHeading) {
+          heading.textContent = heading.dataset.originalHeading;
+          delete heading.dataset.originalHeading;
+        }
+      });
+    };
+  }, [loading]);
+
   return (
     <>
       <NetworkBackground />
