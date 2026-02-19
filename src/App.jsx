@@ -1,35 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import Loader from "./components/Loader";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Products from "./components/Product";
+import ScrollIndicator from "./components/ScrollIndicator";
+import Services from "./components/Services";
+import WhyCareers from "./components/WhyCareers";
+import ParasymPhilosophy from "./components/ParasymPhilosophy";
+import NetworkBackground from "./components/NetworkBackground";
+import ContactUs from "./components/ContactUs";
+import About from "./components/About";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
+
+  // ✅ Initialize AOS only once here
+ AOS.init({
+  duration: 1200,
+  once: false,   // 🔥 Important
+  mirror: true,  // Scroll up pe bhi animation chalega
+  easing: "ease-out-cubic"
+});
+
+
+  // ✅ Refresh AOS after loader disappears
+  useEffect(() => {
+    if (!loading) {
+      setTimeout(() => {
+        AOS.refresh();
+      }, 500);
+    }
+  }, [loading]);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <NetworkBackground />
+
+      <div style={{ position: "relative", zIndex: 1 }}>
+        {loading && <Loader onFinish={() => setLoading(false)} />}
+
+        {!loading && (
+          <>
+            <Navbar />
+            <ScrollIndicator />
+
+            <section id="hero"><Hero /></section>
+            <section id="about"><About /></section>
+            <section id="products"><Products /></section>
+            <section id="services"><Services /></section>
+            <section id="why"><WhyCareers /></section>
+            <section id="philosophy"><ParasymPhilosophy /></section>
+            <section id="contact"><ContactUs /></section>
+
+            <Footer />
+          </>
+        )}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

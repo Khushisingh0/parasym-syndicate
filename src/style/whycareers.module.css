@@ -1,0 +1,160 @@
+/* ================= WRAPPER ================= */
+
+.wrapper {
+  width: 100%;
+  background: transparent;
+  padding:  0;
+  margin-top: 30px;
+}
+
+/* ================= WHY US TOP ================= */
+
+.whyCard {
+  width: 92%;
+  margin: auto;
+  background: linear-gradient(135deg,#1a1a1a,#0f0f0f);
+  padding: 20px 6%;
+  border-radius: 18px;
+  border: 1px solid rgba(255,140,40,0.2);
+  box-shadow:
+    0 0 60px rgba(255,140,40,0.05),
+    inset 0 0 40px rgba(255,140,40,0.05);
+}
+
+.titleOrange {
+  font-size: 80px;
+  font-weight: 800;
+  color: rgba(255,180,90,0.15);
+  margin-bottom: 60px;
+  letter-spacing: 6px;
+}
+
+/* ================= WHY CARDS ================= */
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+}
+
+.whyCardBox {
+  background: rgba(15,15,15,0.85);
+  backdrop-filter: blur(6px);
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,140,40,0.3);
+  transition: all 0.5s ease;
+  box-shadow: 0 0 25px rgba(255,140,40,0.06);
+}
+
+.whyCardBox:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 0 50px rgba(243, 123, 18, 0.4),
+    inset 0 0 30px rgba(229, 114, 14, 0.15);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff7a18;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.cardText {
+  font-size: 15px;
+  color: #dcdcdc;
+  line-height: 1.7;
+}
+
+/* ================= CAREERS SECTION ================= */
+/* ================= SC SECTION ================= */
+
+.scSection {
+  width: 100%;
+  padding: 120px 0;
+}
+
+/* ================= CONNECTED CARD ================= */
+
+.scConnectedCard {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  background: linear-gradient(135deg,#141414,#0c0c0c);
+  border-radius: 24px;
+  padding: 70px 5%;
+  border: 1px solid rgba(255,140,40,0.25);
+  box-shadow:
+    0 0 80px rgba(255,140,40,0.08),
+    inset 0 0 40px rgba(255,140,40,0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+/* Glow Hover */
+.scConnectedCard:hover {
+  box-shadow:
+    0 0 120px rgba(255,140,40,0.25),
+    inset 0 0 60px rgba(255,140,40,0.1);
+}
+
+/* ================= COLUMNS ================= */
+
+.scColumn {
+  padding: 0 30px;
+}
+
+.scColumn h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #ff9a2a;
+  font-weight: 600;
+}
+
+.scColumn p {
+  font-size: 15px;
+  color: #d6d6d6;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.scColumn ul {
+  padding-left: 18px;
+}
+
+.scColumn li {
+  margin-bottom: 12px;
+  font-size: 14.5px;
+  color: #cfcfcf;
+  line-height: 1.7;
+}
+
+/* Divider Line */
+.divider {
+  background: linear-gradient(to bottom,
+    transparent,
+    rgba(255,140,40,0.4),
+    transparent);
+  width: 1px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .scConnectedCard {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .scColumn {
+    padding: 0;
+  }
+}

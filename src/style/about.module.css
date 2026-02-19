@@ -1,0 +1,82 @@
+.section {
+  position: relative;
+  background: transparent;
+  padding: 80px 8vw;
+}
+
+/* GRID STRUCTURE */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 50% - 50% */
+  gap: 6vw;
+  align-items: flex-start;
+  /* margin-bottom: 140px; */
+}
+
+/* SECTION 1 LEFT */
+.leftContent {
+  max-width: 540px;
+  
+}
+
+/* SECTION 2 RIGHT */
+.platformRow {
+  align-items: flex-start;
+}
+
+.rightContent {
+  max-width: 540px;
+  justify-self: start;   /* pushes content to right side */
+}
+
+/* HEADINGS FONT CHANGE */
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(36px, 4vw, 60px);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+    color: #ff7a18;
+
+}
+
+.subTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ff7a18;
+}
+
+/* TEXT */
+.copy {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.list {
+  margin: 18px 0 22px 18px;
+  padding-left: 18px;
+}
+
+.list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .rightContent {
+    justify-self: start;
+  }
+}
