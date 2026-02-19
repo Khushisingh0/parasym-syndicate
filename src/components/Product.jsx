@@ -38,20 +38,18 @@ export default function Products() {
   return (
     <section id="products" className={styles.section}>
 
-      {/* HEADER */}
       <div className={styles.header} data-aos="fade-up">
         <h2>OUR PRODUCTS</h2>
         <p>CORE INTELLIGENCE CAPABILITIES</p>
       </div>
 
-      {/* GRID */}
       <div className={styles.grid}>
         {products.map((item, index) => (
           <div
             key={item.id}
             className={styles.card}
             data-aos="fade-up"
-            data-aos-delay={index * 150} 
+            data-aos-delay={index * 150}
           >
             <h3>{item.title}</h3>
             <p>{item.desc}</p>

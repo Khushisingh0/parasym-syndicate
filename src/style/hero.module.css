@@ -1,4 +1,3 @@
-/* ================= HERO WRAPPER ================= */
 .hero {
   position: relative;
   height: 100vh;
@@ -25,7 +24,7 @@
 .headings {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;     /* right edge equal */
+  align-items: flex-end;     
   padding-left: 70px;
   margin-top: 50px;
 
@@ -43,14 +42,12 @@
   white-space: nowrap;      
 }
 
-/* ================= ABOUT BLOCK ================= */
 .about {
   margin-top: 42px;
   max-width: 720px;
   margin-left: 30px;
 }
 
-/* ================= LABEL ================= */
 .about span {
   display: block;
   font-family: "Press Start 2P", monospace;
@@ -62,7 +59,6 @@
   margin-left: 80px;
 }
 
-/* ================= DESCRIPTION ================= */
 .about p {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   margin-top: 0;
@@ -76,7 +72,6 @@
 .pa{
   text-align: justify;
 }
-/* ================= LEFT LOGO ================= */
 .logo {
   width: 550px;
   z-index: 2;

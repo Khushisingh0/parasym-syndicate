@@ -10,19 +10,16 @@ export default function ParasymPhilosophy() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true }); 
   }, []);
-  
+
   return (
     <section id="philosophy" className={styles.wrapper}>
 
-      {/* ================= CARD 1 ================= */}
       <div className={styles.splitCard}>
 
-        {/* LEFT IMAGE */}
         <div className={styles.imageSide}>
           <img src={img1} alt="Parasym Philosophy" />
         </div>
 
-        {/* RIGHT CONTENT */}
         <div className={styles.contentSide}  data-aos="fade-left">
           <h2>Parasym Philosophy</h2>
 
@@ -78,7 +75,6 @@ export default function ParasymPhilosophy() {
           </p>
         </div>
 
-        {/* RIGHT IMAGE */}
         <div className={styles.imageSide}>
           <img src={img2} alt="What Differentiates Parasym" />
         </div>

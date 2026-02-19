@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import styles from "../style/services.module.css";
 import NetworkBackground from "./NetworkBackground";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 export default function Services() {
   const [active, setActive] = useState(null);
+ useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   return (
     <section id="services" className={styles.wrapper}>
-      {/* TITLE */}
       <div className={styles.header}>
         <h1 className={styles.mainTitle}>Our Services</h1>
         <p className={styles.subTitle}>
@@ -16,54 +20,89 @@ export default function Services() {
         </p>
       </div>
 
-      {/* CARDS */}
-      <div className={styles.cardGrid}>
-        <ServiceCard title="Cybersecurity Services" onClick={() => setActive("cyber")} />
-        <ServiceCard title="Artificial Intelligence Services" onClick={() => setActive("ai")} />
-        <ServiceCard title="Cybercrime Investigation & Digital Forensics" onClick={() => setActive("forensics")} />
-        <ServiceCard title="Cybersecurity & Artificial Intelligence Training" onClick={() => setActive("training")} />
-        <ServiceCard title="Legal Support Services" onClick={() => setActive("legal")} />
-          <ServiceCard 
-  title="Strategic Communications & Advisory Services" 
-  onClick={() => setActive("strategic")} 
-/>
+    <div className={styles.cardGrid}>
 
-      </div>
+  {/* LEFT SIDE (2) */}
+  <ServiceCard
+    title="Cybersecurity Services"
+    animation="fade-right"
+    onClick={() => setActive("cyber")}
+  />
 
-      {/* OVERLAY */}
-   {active && (
-  <div className={styles.overlay}>
+  <ServiceCard
+    title="Artificial Intelligence Services"
+    animation="fade-right"
+    onClick={() => setActive("ai")}
+  />
 
-    {/* 🔥 NETWORK BACKGROUND INSIDE OVERLAY */}
-    <NetworkBackground />
+  {/* TOP CENTER (1) */}
+  <ServiceCard
+    title="Cybercrime Investigation & Digital Forensics"
+    animation="fade-down"
+    onClick={() => setActive("forensics")}
+  />
 
-    <button 
-      className={styles.close} 
-      onClick={() => setActive(null)}
-    >
-      ✕
-    </button>
+  {/* BOTTOM CENTER (1) */}
+  <ServiceCard
+    title="Cybersecurity & Artificial Intelligence Training"
+    animation="fade-up"
+    onClick={() => setActive("training")}
+  />
 
-    <div className={styles.page}>
-      {active === "cyber" && <Cybersecurity />}
-      {active === "ai" && <AI />}
-      {active === "forensics" && <Forensics />}
-      {active === "training" && <Training />}
-      {active === "legal" && <Legal />}
-      {active === "strategic" && <Strategic />}
-    </div>
+  {/* RIGHT SIDE (2) */}
+  <ServiceCard
+    title="Legal Support Services"
+    animation="fade-left"
+    onClick={() => setActive("legal")}
+  />
 
-  </div>
-)}
+  <ServiceCard
+    title="Strategic Communications & Advisory Services"
+    animation="fade-left"
+    onClick={() => setActive("strategic")}
+  />
+
+</div>
+
+
+      {active && (
+        <div className={styles.overlay}>
+
+          <NetworkBackground />
+
+          <button
+            className={styles.close}
+            onClick={() => setActive(null)}
+          >
+            ✕
+          </button>
+
+          <div className={styles.page}>
+            {active === "cyber" && <Cybersecurity />}
+            {active === "ai" && <AI />}
+            {active === "forensics" && <Forensics />}
+            {active === "training" && <Training />}
+            {active === "legal" && <Legal />}
+            {active === "strategic" && <Strategic />}
+          </div>
+
+        </div>
+      )}
 
     </section>
   );
 }
 
 /* ---------------- CARD ---------------- */
-function ServiceCard({ title, onClick }) {
+function ServiceCard({ title, onClick, animation }) {
   return (
-    <div className={styles.card} onClick={onClick}>
+    <div
+      className={styles.card}
+      onClick={onClick}
+      data-aos={animation}
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
       <h3>{title}</h3>
       <p>
         Explore full operational scope, intelligence integration,
@@ -73,6 +112,7 @@ function ServiceCard({ title, onClick }) {
     </div>
   );
 }
+
 
 /* ---------------- SHARED ---------------- */
 function Section({ title, children }) {
@@ -444,18 +484,18 @@ function Training() {
       <h2>Cybersecurity and Artificial Intelligence Training</h2>
 
       <p>
-       Parasym Syndicate provides advanced training programs in cybersecurity and artificial intelligence for professionals operating in high-risk, high-responsibility environments.
-Our training is designed to build operational understanding, not just theoretical knowledge. Programs focus on how attacks occur in reality, how AI systems fail under pressure, and how decision-makers should respond
-when technical, human, and strategic factors collide.
+        Parasym Syndicate provides advanced training programs in cybersecurity and artificial intelligence for professionals operating in high-risk, high-responsibility environments.
+        Our training is designed to build operational understanding, not just theoretical knowledge. Programs focus on how attacks occur in reality, how AI systems fail under pressure, and how decision-makers should respond
+        when technical, human, and strategic factors collide.
         <br /><br />
-       Training is delivered by practitioners and intelligence specialists, and is directly informed by Parasym’s operational tools and investigative experience. Cybersecurity and Artificial Intelligence Training
+        Training is delivered by practitioners and intelligence specialists, and is directly informed by Parasym’s operational tools and investigative experience. Cybersecurity and Artificial Intelligence Training
 
       </p>
 
       <Section title="Cybersecurity Training">
         <p>Parasym cybersecurity training covers both defensive and adversarial
-perspectives.</p>
-<p>Core Areas</p>
+          perspectives.</p>
+        <p>Core Areas</p>
         <ul>
           <li>Cyber threat landscape and attacker methodologies</li>
           <li>Network, cloud, and identity security fundamentals</li>
@@ -465,13 +505,13 @@ perspectives.</p>
           <li>Cyber risk communication for leadership</li>
         </ul>
         <p>Training incorporates case studies, simulations, and controlled
-adversarial scenarios rather than purely technical labs</p>
+          adversarial scenarios rather than purely technical labs</p>
       </Section>
 
       <Section title="Artificial Intelligence Training">
         <p>Parasym AI training focuses on the safe, responsible, and secure
-use of AI in operational environments.</p>
-<p>Core Areas</p>
+          use of AI in operational environments.</p>
+        <p>Core Areas</p>
         <ul>
           <li>AI system fundamentals and limitations</li>
           <li>AI security and misuse risks</li>
@@ -497,7 +537,7 @@ use of AI in operational environments.</p>
 
       <Section title="Delivery Formats">
         <p>Training is available through:
-</p>
+        </p>
         <ul>
           <li>In-person workshops</li>
           <li>Closed-group bootcamps</li>
@@ -506,7 +546,7 @@ use of AI in operational environments.</p>
           <li>Long-term capability engagements</li>
         </ul>
         <p>All programs can be adapted for enterprise, government,
-or academic environments.</p>
+          or academic environments.</p>
       </Section>
 
       <Section title="Training Philosophy">
@@ -519,12 +559,12 @@ or academic environments.</p>
           <li>Legal, ethical, and governance boundaries</li>
         </ul>
         <p>The objective is to produce professionals who can
-anticipate problems, not just respond to alerts.</p>
+          anticipate problems, not just respond to alerts.</p>
       </Section>
 
       <Side title="Governance and Ethics">
         <p>Parasym training emphasizes:
-</p>
+        </p>
         <ul>
           <li>Legal and ethical boundaries</li>
           <li>Responsible use of knowledge</li>
@@ -532,7 +572,7 @@ anticipate problems, not just respond to alerts.</p>
           <li>Professional accountability</li>
         </ul>
         <p>Training does not include uncontrolled or
-harmful instruction.</p>
+          harmful instruction.</p>
       </Side>
 
       <Side title="Outcome">
@@ -573,7 +613,7 @@ function Legal() {
         </ul>
         <p>Support is designed to help legal teams understand what actually
           happened, how it can be proven, and where technical claims may be
-          weak or overstated.</p>        
+          weak or overstated.</p>
       </Section>
 
       <Section title="Digital Forensics Support for Lawyers">

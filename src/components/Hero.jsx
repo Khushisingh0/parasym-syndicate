@@ -5,16 +5,13 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
 
-      {/* LEFT SIDE LOGO */}
       <div className={styles.logo}>
         <img src={logo} alt="Parasym Syndicate" />
       </div>
 
-      {/* RIGHT CONTENT */}
       <div className={styles.content}>
 
-        {/* HEADINGS */}
-        <div 
+        <div
           className={styles.headings}
           data-aos="fade-left"
         >
@@ -23,13 +20,12 @@ export default function Hero() {
           <h1 className={styles.line}>Innovation</h1>
         </div>
 
-        {/* ABOUT TEXT */}
-        <div 
-  className={styles.about}
-  data-aos="fade-left"
-  data-aos-delay="300"
-  data-aos-anchor-placement="top-bottom"
->
+        <div
+          className={styles.about}
+          data-aos="fade-left"
+          data-aos-delay="300"
+          data-aos-anchor-placement="top-bottom"
+        >
 
           <span>WE ARE PARASYM SYNDICATE</span>
 

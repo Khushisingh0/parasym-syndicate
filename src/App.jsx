@@ -18,16 +18,14 @@ import About from "./components/About";
 function App() {
   const [loading, setLoading] = useState(true);
 
-  // ✅ Initialize AOS only once here
  AOS.init({
   duration: 1200,
-  once: false,   // 🔥 Important
-  mirror: true,  // Scroll up pe bhi animation chalega
+  once: false,  
+  mirror: true,  
   easing: "ease-out-cubic"
 });
 
 
-  // ✅ Refresh AOS after loader disappears
   useEffect(() => {
     if (!loading) {
       setTimeout(() => {

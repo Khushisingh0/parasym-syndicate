@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.top}>
-        {/* BRAND */}
         <div className={styles.brand}>
           <img src={logo} alt="Parasym Syndicate" />
           <p>
@@ -15,7 +14,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* LINKS */}
         <div className={styles.links}>
           <div>
             <h4>Product</h4>
@@ -40,10 +38,8 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* DIVIDER */}
       <div className={styles.divider}></div>
 
-      {/* BOTTOM */}
       <div className={styles.bottom}>
         <span>© 2026 Parasym Syndicate. All rights reserved.</span>
 
