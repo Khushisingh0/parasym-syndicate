@@ -64,7 +64,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className={styles.visualWrap} data-aos="fade-left">
+        {/* <div className={styles.visualWrap} data-aos="fade-left">
           <div className={`${styles.cyberVisual} ${styles.visualPrimary}`}>
             <div className={styles.gridPattern} />
             <div className={styles.radarRing} />
@@ -82,27 +82,12 @@ export default function About() {
             <span className={`${styles.chip} ${styles.chipTop}`}>THREAT MAP</span>
             <span className={`${styles.chip} ${styles.chipBottom}`}>ZERO TRUST</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className={`${styles.container} ${styles.platformRow}`}>
         <div className={styles.visualWrap} data-aos="fade-right">
-          <div className={`${styles.cyberVisual} ${styles.visualSecondary}`}>
-            <div className={styles.gridPattern} />
-            <div className={styles.hudCircle} />
-            <div className={styles.dataBars}>
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className={styles.traceLine} />
-            <div className={styles.visualOverlay} />
-            <div className={styles.scanLine} />
-            <span className={`${styles.chip} ${styles.chipTop}`}>ACTIVE DEFENSE</span>
-            <span className={`${styles.chip} ${styles.chipBottom}`}>AI FORENSICS</span>
-          </div>
+          
         </div>
 
         <div className={styles.rightContent} data-aos="fade-left">

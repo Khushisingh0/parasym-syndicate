@@ -1,210 +1,102 @@
+/* ================= WRAPPER ================= */
+
 .wrapper {
-  width: min(1880px, 99%);
-  margin: 24px auto 0;
-  position: relative;
-}
-
-.whySticky {
-  position: sticky;
-  top: 86px;
-  z-index: 1;
-}
-
-.whyCard {
-  background: #ff4f16;
-  border-radius: 4px;
-  padding: clamp(34px, 4.5vw, 78px) clamp(24px, 4vw, 84px) 70px;
-  min-height: calc(100vh - 86px);
-}
-
-.titleRow {
+  width: 100%;
+  padding:70px 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.title {
-  margin: 0;
-  font-size: clamp(52px, 6.4vw, 104px);
-  line-height: 0.95;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.42);
+
+.bannerCard {
+  width: 92%;
+  margin: auto;
+  padding: 70px 6%;
+  border-radius: 32px;
+  background: linear-gradient(135deg,#141414,#0c0c0c);
+  border: 1px solid rgba(255,140,40,0.25);
+  box-shadow:
+    0 0 100px rgba(255,140,40,0.08),
+    inset 0 0 60px rgba(255,140,40,0.05);
+  transition: all 0.6s ease;
+}
+
+.bannerCard:hover {
+  box-shadow:
+    0 0 150px rgba(255,140,40,0.3),
+    inset 0 0 60px rgba(255,140,40,0.1);
+}
+
+/* ================= TITLE ================= */
+
+.bannerTitle {
+  font-size: 40px;
+  margin-bottom: 80px;
   font-weight: 700;
-  text-transform: uppercase;
+  color: #ff7a18;
+  letter-spacing: 6px;
 }
 
-.hexIcon {
-  width: 66px;
-  height: 72px;
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+/* ================= GRID ================= */
+
+.bannerGrid {
   display: grid;
-  place-items: center;
-  color: rgba(255, 255, 255, 0.74);
-  flex-shrink: 0;
+  grid-template-columns: repeat(3,1fr);
+  gap: 60px;
 }
 
-.hexIcon span {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  line-height: 1;
-}
-
-.columns {
-  margin-top: clamp(64px, 10vw, 160px);
+.bannerGridThree {
   display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: clamp(28px, 2.4vw, 72px);
+  grid-template-columns: repeat(3,1fr);
+  gap: 60px;
 }
 
-.whyCardBox {
-  max-width: 430px;
+/* ================= INNER BOX ================= */
+
+.innerBox {
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(20,20,20,0.6);
+  border: 1px solid rgba(255,140,40,0.2);
+  transition: all 0.4s ease;
 }
 
-.cardTitle {
-  margin: 0 0 14px;
-  font-size: clamp(34px, 2.2vw, 50px);
-  font-weight: 600;
-  color: #ffffff;
-  letter-spacing: 2px;
+.innerBox:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255,140,40,0.6);
+  box-shadow:
+    0 0 60px rgba(255,140,40,0.25),
+    inset 0 0 30px rgba(255,140,40,0.1);
 }
 
-.cardText {
-  margin: 0;
-  color: #ffffff;
-  font-size: clamp(20px, 1.2vw, 34px);
-  line-height: 1.45;
-  max-width: 44ch;
+.innerBox h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ff9a2a;
 }
 
-.careersWrap {
-  margin-top: 0;
-  position: relative;
-  z-index: 3;
-  padding-bottom: 40px;
-  will-change: transform;
+.innerBox p,
+.innerBox li {
+  font-size: 14.8px;
+  line-height: 1.8;
+  color: #d6d6d6;
 }
 
-.careersCard {
-  background: #c4c9cc;
-  border-radius: 4px;
-  padding: clamp(34px, 4.5vw, 78px) clamp(24px, 4vw, 84px) 70px;
+.innerBox ul {
+  padding-left: 18px;
 }
 
-.careersCard .title {
-  color: rgba(255, 255, 255, 0.8);
-}
+/* ================= RESPONSIVE ================= */
 
-.careersCard .hexIcon {
-  color: rgba(255, 255, 255, 0.84);
-  border-color: rgba(255, 255, 255, 0.84);
-}
-
-.careersGrid {
-  margin-top: clamp(42px, 4vw, 70px);
-  display: grid;
-  grid-template-columns: minmax(280px, 540px) minmax(340px, 1fr);
-  gap: clamp(28px, 4.4vw, 110px);
-  align-items: start;
-}
-
-.photoBlock {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  min-height: 620px;
-  background: #9ca3a9;
-}
-
-.photoImage {
-  width: 100%;
-  height: 100%;
-  min-height: 620px;
-  display: block;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.03);
-  transform: scale(1.015);
-}
-
-.photoOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22));
-  pointer-events: none;
-}
-
-.careerContent {
-  color: #111;
-  max-width: 760px;
-}
-
-.careerHeading {
-  margin: 8px 0 20px;
-  font-size: clamp(34px, 2.2vw, 52px);
-  letter-spacing: 4px;
-  font-weight: 700;
-}
-
-.careerContent p {
-  margin: 0 0 26px;
-  font-size: clamp(22px, 1.18vw, 30px);
-  line-height: 1.5;
-}
-
-.openPositionsBtn {
-  border: 0;
-  border-radius: 7px;
-  background: #ff4f16;
-  color: #090909;
-  padding: 14px 24px;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-@media (max-width: 1200px) {
-  .whySticky {
-    position: relative;
-    top: 0;
-  }
-
-  .columns {
+@media (max-width: 1100px) {
+  .bannerGrid,
+  .bannerGridThree {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .careersGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .photoBlock {
-    min-height: 420px;
-    max-width: 700px;
-  }
-
-  .photoImage {
-    min-height: 420px;
-  }
-
-  .whyCard {
-    min-height: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .wrapper {
-    width: 97%;
-  }
-
-  .careersWrap {
-    margin-top: 12px;
-    transform: none !important;
-  }
-
-  .openPositionsBtn {
-    width: 100%;
-    font-size: 18px;
+  .bannerTitle {
+    font-size: 40px;
   }
 }

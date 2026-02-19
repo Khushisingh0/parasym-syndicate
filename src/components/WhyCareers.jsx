@@ -8,30 +8,26 @@ export default function WhyCareers() {
 
   useEffect(() => {
     const onScroll = () => {
-      const wrapper = wrapperRef.current;
       const careers = careersRef.current;
-      if (!wrapper || !careers) return;
+      if (!careers) return;
 
-      const isMobile = window.innerWidth <= 1200;
+      const isMobile = window.innerWidth <= 1100;
       if (isMobile) {
         setCareersShift(0);
         return;
       }
 
-      const careersRect = careers.getBoundingClientRect();
-      const viewportH = window.innerHeight;
+      const rect = careers.getBoundingClientRect();
+      const vh = window.innerHeight;
 
-      const start = viewportH;
-      const end = viewportH * 0.1;
-      const progress = (start - careersRect.top) / (start - end);
+      const progress = (vh - rect.top) / vh;
       const clamped = Math.max(0, Math.min(1, progress));
 
-      const maxShift = viewportH * 0.72;
-      setCareersShift(clamped * maxShift);
+      setCareersShift(clamped * vh * 0.6);
     };
 
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", onScroll);
 
     return () => {
@@ -41,88 +37,78 @@ export default function WhyCareers() {
   }, []);
 
   return (
-    <section className={styles.wrapper} ref={wrapperRef}>
-      <div className={styles.whySticky}>
-        <div className={styles.whyCard}>
-          <div className={styles.titleRow}>
-            <h2 className={styles.title}>WHY US?</h2>
-            <div className={styles.hexIcon}>
-              <span>FIRE</span>
-            </div>
+    <section className={styles.wrapper}>
+
+      {/* ================= BANNER 1 ================= */}
+      <div className={styles.bannerCard}>
+
+        <h2 className={styles.bannerTitle}>WHY US</h2>
+
+        <div className={styles.bannerGrid}>
+          <div className={styles.innerBox}>
+            <h3>INTEGRITY</h3>
+            <p>
+              We uphold the highest standards of integrity in all our activities,
+              ensuring trust, ethical governance, and long-term accountability.
+            </p>
           </div>
 
-          <div className={styles.columns}>
-            <div className={styles.whyCardBox}>
-              <h3 className={styles.cardTitle}>INTEGRITY</h3>
-              <p className={styles.cardText}>
-                We uphold the highest standards of integrity in all our activities.
-                We believe that fair trading practices are fundamental to our success
-                and the trust our partners place in us.
-              </p>
-            </div>
+          <div className={styles.innerBox}>
+            <h3>SECURITY</h3>
+            <p>
+              We design proactive, multi-layered security frameworks that
+              anticipate threats and strengthen resilience across domains.
+            </p>
+          </div>
 
-            <div className={styles.whyCardBox}>
-              <h3 className={styles.cardTitle}>TRANSPARENCY</h3>
-              <p className={styles.cardText}>
-                Transparency drives trust. We are committed to providing all the
-                necessary and relevant information to our partners, empowering them to
-                make informed decisions.
-              </p>
-            </div>
-
-            <div className={styles.whyCardBox}>
-              <h3 className={styles.cardTitle}>EXPEDIENCY</h3>
-              <p className={styles.cardText}>
-                High performance and rapid response to changes in market conditions
-                ensure the optimal outcome for every project.
-              </p>
-            </div>
+          <div className={styles.innerBox}>
+            <h3>INNOVATION</h3>
+            <p>
+              We build adaptive intelligence systems that evolve with
+              geopolitical, financial, and cyber risk environments.
+            </p>
           </div>
         </div>
+
       </div>
 
-      <div
-        className={styles.careersWrap}
-        ref={careersRef}
-        style={{ transform: `translateY(-${careersShift}px)` }}
-      >
-        <section className={styles.careersCard}>
-          <div className={styles.titleRow}>
-            <h2 className={styles.title}>CAREERS</h2>
-            <div className={styles.hexIcon}>
-              <span>CUP</span>
-            </div>
+
+      {/* ================= BANNER 2 ================= */}
+      <div className={styles.bannerCard}>
+
+        <div className={styles.bannerGridThree}>
+
+          <div className={styles.innerBox}>
+            <h3>Use Cases</h3>
+            <p className={styles.subTitle}>Parasym supports:</p>
+            <ul>
+              <li>Early threat identification and prevention</li> <li>Financial crime and corruption investigations</li> <li>Cybersecurity readiness and adversarial testing</li> <li>Disinformation and information warfare defense</li> <li>Strategic planning and policy impact assessment</li> <li>Crisis prevention and escalation control</li>
+            </ul>
           </div>
 
-          <div className={styles.careersGrid}>
-            <div className={styles.photoBlock}>
-              <img
-                className={styles.photoImage}
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
-                alt="Team collaboration at workplace"
-                loading="lazy"
-              />
-              <div className={styles.photoOverlay} aria-hidden="true" />
-            </div>
-
-            <div className={styles.careerContent}>
-              <h3 className={styles.careerHeading}>WORKING AT RAVEN</h3>
-              <p>
-                Your ambition is boundless?
-                <br />
-                Your long-term plan is to rock?
-                <br />
-                You play to win?
-              </p>
-              <p>If yes - come and work with us.</p>
-              <p>We work as a team, united by a common goal - to succeed.</p>
-              <button type="button" className={styles.openPositionsBtn}>
-                EXPLORE OPEN POSITIONS
-              </button>
-            </div>
+          <div className={styles.innerBox}>
+            <h3>Who Parasym Serves</h3>   
+                <p> Parasym works with organizations operating in high-stakes, complex environments, including: </p>
+                 <ul>
+                   <li>Government and public-sector institutions</li>
+                 <li>Law enforcement and national security agencies</li> 
+                 <li>Financial institutions and compliance bodies</li> 
+                 <li>Critical infrastructure operators</li>
+                  <li>Enterprises facing geopolitical risk</li> 
+                  <li>Executive leadership and boards</li>
+                   </ul>
           </div>
-        </section>
+
+          <div className={styles.innerBox}>
+            <h3>Governance & Ethics</h3>
+            <p>Parasym operates under strict ethical and legal constraints.</p> <ul> <li>Non-autonomous</li> <li>Human-supervised</li> <li>Scope-limited</li> <li>Audit-ready</li> </ul>
+          </div>
+
+        </div>
+
       </div>
+
     </section>
+
   );
 }
