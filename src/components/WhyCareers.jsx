@@ -1,5 +1,5 @@
-import styles from "../style/whycareers.module.css";
 import { useEffect, useRef, useState } from "react";
+import styles from "../style/whycareers.module.css";
 
 export default function WhyCareers() {
   const wrapperRef = useRef(null);
@@ -21,13 +21,11 @@ export default function WhyCareers() {
       const careersRect = careers.getBoundingClientRect();
       const viewportH = window.innerHeight;
 
-      // Start lifting careers only when it enters viewport from below.
       const start = viewportH;
       const end = viewportH * 0.1;
       const progress = (start - careersRect.top) / (start - end);
       const clamped = Math.max(0, Math.min(1, progress));
 
-      // Move up gradually to overlap Why Us during scroll.
       const maxShift = viewportH * 0.72;
       setCareersShift(clamped * maxShift);
     };
@@ -35,6 +33,7 @@ export default function WhyCareers() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);

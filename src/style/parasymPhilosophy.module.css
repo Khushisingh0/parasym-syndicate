@@ -1,110 +1,129 @@
+/* ================= WRAPPER ================= */
 
 .wrapper {
   width: 100%;
   padding: 0px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 0%;
   margin-bottom: 30px;
 }
 
+/* ================= BASE CARD ================= */
 
-.splitBanner {
+.splitCard,
+.splitCardReverse {
   width: 92%;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  padding: 100px 6%;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 60px 5%;
   border-radius: 32px;
   background: linear-gradient(135deg,#141414,#0c0c0c);
   border: 1px solid rgba(255,140,40,0.25);
   box-shadow:
     0 0 100px rgba(255,140,40,0.08),
     inset 0 0 60px rgba(255,140,40,0.05);
-  transition: all 0.6s ease;
+  transition: all 0.5s ease;
 }
 
-/* Hover Glow */
-.splitBanner:hover {
+/* Hover */
+.splitCard:hover,
+.splitCardReverse:hover {
   box-shadow:
-    0 0 150px rgba(255,140,40,0.3),
+    0 0 150px rgba(255,140,40,0.25),
     inset 0 0 60px rgba(255,140,40,0.1);
 }
 
-/* ================= SIDES ================= */
+/* ================= IMAGE ================= */
 
-.leftSide,
-.rightSide {
-  padding: 0 50px;
+.imageSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ================= HEADINGS ================= */
+.imageSide img {
+  width: 70%;
+  max-width: 400px;
+  border-radius: 20px;
+  opacity: 0.9;
+  transition: transform 0.4s ease;
+}
 
-.leftSide h2,
-.rightSide h2 {
+.splitCard:hover img,
+.splitCardReverse:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= CONTENT ================= */
+
+.contentSide {
+  padding: 0 40px;
+}
+
+.contentSide h2 {
   font-size: 38px;
-  margin-bottom: 35px;
-  color: #ff9a2a;
-  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ff7a18;
 }
 
-/* ================= TEXT ================= */
-
-.leftSide p,
-.rightSide p {
+.contentSide p {
   font-size: 15.5px;
-  line-height: 1.9;
+  line-height: 1.8;
   color: #d4d4d4;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
-
-/* ================= SUBTITLE ================= */
 
 .subTitle {
-  margin-top: 25px;
+  margin-top: 20px;
   font-weight: 500;
   color: #ff7a18;
 }
 
-/* ================= LIST ================= */
-
-.leftSide ul,
-.rightSide ul {
+.contentSide ul {
   padding-left: 20px;
   margin: 15px 0 25px 0;
 }
 
-.leftSide li,
-.rightSide li {
-  margin-bottom: 13px;
-  font-size: 14.8px;
-  line-height: 1.7;
+.contentSide li {
+  margin-bottom: 12px;
+  font-size: 14.5px;
   color: #cfcfcf;
 }
 
-/* ================= DIVIDER ================= */
+/* ================= CARD 2 ORDER FIX ================= */
 
-.divider {
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255,140,40,0.5),
-    transparent
-  );
+.splitCardReverse .contentSide {
+  order: 1;
+}
+
+.splitCardReverse .imageSide {
+  order: 2;
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {
-  .splitBanner {
+
+  .splitCard,
+  .splitCardReverse {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 
-  .divider {
-    display: none;
+  .splitCardReverse .contentSide,
+  .splitCardReverse .imageSide {
+    order: unset;
   }
 
-  .leftSide,
-  .rightSide {
+  .contentSide {
     padding: 0;
+  }
+
+  .imageSide img {
+    width: 85%;
   }
 }
