@@ -37,22 +37,22 @@ const products = [
 export default function Products() {
   return (
     <section id="products" className={styles.section}>
-      {/* BACKGROUND CIRCUIT */}
-      <div className={styles.circuitBg}>
-        <div className={styles.circuitLayer}></div>
-        <div className={styles.flowLayer}></div>
-      </div>
 
       {/* HEADER */}
-      <div className={styles.header}>
+      <div className={styles.header} data-aos="fade-up">
         <h2>OUR PRODUCTS</h2>
         <p>CORE INTELLIGENCE CAPABILITIES</p>
       </div>
 
       {/* GRID */}
       <div className={styles.grid}>
-        {products.map((item) => (
-          <div key={item.id} className={styles.card}>
+        {products.map((item, index) => (
+          <div
+            key={item.id}
+            className={styles.card}
+            data-aos="fade-up"
+            data-aos-delay={index * 150} 
+          >
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
             {item.coming && (

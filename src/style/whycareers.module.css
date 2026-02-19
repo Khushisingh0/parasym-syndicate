@@ -22,11 +22,12 @@
 }
 
 .titleOrange {
-  font-size: 80px;
+  font-size: 35px;
   font-weight: 800;
-  color: rgba(255,180,90,0.15);
+  color:white;
   margin-bottom: 60px;
   letter-spacing: 6px;
+  ;
 }
 
 /* ================= WHY CARDS ================= */
@@ -68,7 +69,6 @@
   line-height: 1.7;
 }
 
-/* ================= CAREERS SECTION ================= */
 /* ================= SC SECTION ================= */
 
 .scSection {
@@ -111,7 +111,7 @@
 .scColumn h2 {
   font-size: 32px;
   margin-bottom: 25px;
-  color: #ff9a2a;
+  color: #ff7a18;
   font-weight: 600;
 }
 

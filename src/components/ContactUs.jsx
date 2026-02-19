@@ -6,10 +6,7 @@ export default function ContactUs() {
     <section id="contact" className={styles.wrapper}>
 <NetworkBackground/>
       {/* CIRCUIT BACKGROUND */}
-      <div className={styles.circuitBg}>
-        <div className={styles.circuitLayer}></div>
-        <div className={styles.flowLayer}></div>
-      </div>
+     
 
       <div className={styles.container}>
         <div className={styles.card}>
