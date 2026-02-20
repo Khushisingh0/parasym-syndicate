@@ -82,7 +82,7 @@
 }
 
 .card h3 {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 600;
   color: #ffae6a;
   line-height: 1.4;
@@ -96,10 +96,11 @@
 }
 
 .card span {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.4px;
   color: #ff8a2b;
+  
 }
 
 

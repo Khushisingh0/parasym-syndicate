@@ -149,3 +149,36 @@ justify-content: end;}
     color: #ff7a18;
 
 }
+/* ========================= */
+/* 📱 MOBILE NAVBAR CLEAN */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .nav {
+    left: 0;
+    right: 0;
+    padding: 0 18px;
+    height: 70px;
+    justify-content: space-between;
+  }
+
+  /* LEFT LOGO */
+  .logo img {
+    height: 55px;
+    margin-top: 6px;
+  }
+
+  /* RIGHT ICON */
+  .menuBtn {
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .hamburger {
+    font-size: 26px;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+}
