@@ -122,3 +122,6 @@ body {
     transition: none;
   }
 }
+body {
+  overflow-x: hidden;
+}

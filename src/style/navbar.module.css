@@ -182,3 +182,69 @@ justify-content: end;}
   }
 
 }
+
+/* ===================================== */
+/* 📱 MOBILE SIDE MENU IMPROVEMENTS */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+  /* SIDE MENU */
+  .sideMenu {
+    top: 75px;
+    right: 16px;
+    width: calc(100% - 32px);
+    max-width: 320px;
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  /* CLOSE BUTTON (original width restored) */
+  .closeBtn {
+    width: auto;              /* restore original */
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+  }
+
+  /* MENU LIST FULL WIDTH */
+  .menuList li {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 18px 0;          /* better touch height */
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  /* FULL WIDTH HOVER AREA */
+  .menuList li:hover {
+    color: #ff7a18;
+  }
+
+}
+
+
+/* SMALL DEVICES */
+@media (max-width: 480px) {
+
+  .menuList li {
+    font-size: 13px;
+    padding: 16px 0;
+  }
+
+  .closeBtn {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+
+  .nav {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100%;
+  }
+
+}

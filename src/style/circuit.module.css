@@ -67,3 +67,9 @@
     background-position: 220px 180px, -260px 220px;
   }
 }
+@media (max-width: 768px) {
+  .networkBackgroundClassName {
+    overflow: hidden;
+    max-width: 100%;
+  }
+}
