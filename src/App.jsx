@@ -14,6 +14,7 @@ import ParasymPhilosophy from "./components/ParasymPhilosophy";
 import NetworkBackground from "./components/NetworkBackground";
 import ContactUs from "./components/ContactUs";
 import About from "./components/About";
+import Blogs from "./components/Blogs";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -116,6 +117,7 @@ function App() {
             <section id="services"><Services /></section>
             <section id="why"><WhyCareers /></section>
             <section id="philosophy"><ParasymPhilosophy /></section>
+            <Blogs/>
             <section id="contact"><ContactUs /></section>
 
             <Footer />

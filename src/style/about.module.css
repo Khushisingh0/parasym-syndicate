@@ -36,11 +36,13 @@
 
 .subTitle {
   font-family: "Montserrat", sans-serif;
-  font-size: 26px;
+  font-size: clamp(16px, 4vw, 26px);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
   color: #ff7a18;
+
+  white-space: nowrap;      /* 👈 Single line force */
 }
 
 .copy {
@@ -470,5 +472,11 @@
   .traceLine,
   .chip {
     animation: none !important;
+  }
+}
+@media (max-width: 480px) {
+  .subTitle {
+    font-size: 18px;
+    letter-spacing: 1px;
   }
 }

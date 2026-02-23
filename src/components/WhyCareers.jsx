@@ -46,26 +46,24 @@ export default function WhyCareers() {
 
         <div className={styles.bannerGrid}>
           <div className={styles.innerBox}>
-            <h3>INTEGRITY</h3>
+            <h3>
+INTELLIGENCE</h3>
             <p>
-              We uphold the highest standards of integrity in all our activities,
-              ensuring trust, ethical governance, and long-term accountability.
+              We transform fragmented data into actionable insight. By integrating cyber, financial, geopolitical, and operational signals, we enable informed decision-making in complex risk environments.
             </p>
           </div>
 
           <div className={styles.innerBox}>
             <h3>SECURITY</h3>
             <p>
-              We design proactive, multi-layered security frameworks that
-              anticipate threats and strengthen resilience across domains.
+            We design proactive, multi-layered security frameworks that anticipate threats before they materialize. Our approach strengthens resilience across digital, physical, and strategic domains.
             </p>
           </div>
 
           <div className={styles.innerBox}>
             <h3>INNOVATION</h3>
             <p>
-              We build adaptive intelligence systems that evolve with
-              geopolitical, financial, and cyber risk environments.
+             We build adaptive solutions at the intersection of technology, strategy, and intelligence. Through continuous research and advanced capabilities, we stay ahead of evolving global risks.
             </p>
           </div>
         </div>
