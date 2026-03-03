@@ -1,5 +1,5 @@
-import styles from "../style/hero.module.css";
-import logo from "../assets/logo.png";
+import styles from "../../style/hero.module.css";
+import logo from "../../assets/logo.png";
 
 export default function Hero() {
   return (

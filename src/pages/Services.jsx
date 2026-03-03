@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import styles from "../style/services.module.css";
-import NetworkBackground from "./NetworkBackground";
+import NetworkBackground from "../components/Shared/NetworkBackground";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 

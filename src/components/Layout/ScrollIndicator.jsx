@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../style/scrollIndicator.module.css";
+import styles from "../../style/scrollIndicator.module.css";
 
 const sections = [
   { id: "hero", label: "Home" },

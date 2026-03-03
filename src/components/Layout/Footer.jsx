@@ -1,5 +1,5 @@
-import styles from "../style/footer.module.css";
-import logo from "../assets/logo.png"; // path check kar lena
+import styles from "../../style/footer.module.css";
+import logo from "../../assets/logo.png"; // path check kar lena
 
 export default function Footer() {
   return (

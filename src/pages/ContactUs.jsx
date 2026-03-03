@@ -1,5 +1,5 @@
 import styles from "../style/contactUs.module.css";
-import NetworkBackground from "./NetworkBackground";
+import NetworkBackground from "../components/Shared/NetworkBackground";
 
 export default function ContactUs() {
     return (

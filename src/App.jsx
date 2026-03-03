@@ -1,129 +1,57 @@
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Loader from "./components/Loader";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Products from "./components/Product";
-import ScrollIndicator from "./components/ScrollIndicator";
-import Services from "./components/Services";
-import WhyCareers from "./components/WhyCareers";
-import ParasymPhilosophy from "./components/ParasymPhilosophy";
-import NetworkBackground from "./components/NetworkBackground";
-import ContactUs from "./components/ContactUs";
-import About from "./components/About";
-import Blogs from "./components/Blogs";
+import Navbar from "./components/Layout/Navbar";
+import Footer from "./components/Layout/Footer";
+import Loader from "./components/Layout/Loader";
+import NetworkBackground from "./components/Shared/NetworkBackground";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
+import Services from "./pages/Services";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
- AOS.init({
-  duration: 1200,
-  once: false,  
-  mirror: true,  
-  easing: "ease-out-cubic"
-});
-
-
+  // Initialize AOS once
   useEffect(() => {
-    if (!loading) {
-      setTimeout(() => {
-        AOS.refresh();
-      }, 500);
-    }
-  }, [loading]);
-
-  useEffect(() => {
-    if (loading) return;
-
-    const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
-    const animatedHeadings = [];
-
-    headings.forEach((heading) => {
-      const rawText = heading.textContent ?? "";
-      if (!rawText.trim()) return;
-
-      heading.dataset.originalHeading = rawText;
-      heading.setAttribute("aria-label", rawText.trim());
-      heading.textContent = "";
-      heading.classList.add("global-heading-rtl");
-
-      const chars = Array.from(rawText);
-      chars.forEach((char, index) => {
-        const span = document.createElement("span");
-        span.className = "global-heading-char";
-        span.style.setProperty("--char-delay", `${(chars.length - 1 - index) * 36}ms`);
-        span.setAttribute("aria-hidden", "true");
-
-        if (char === " ") {
-          span.classList.add("space");
-          span.innerHTML = "&nbsp;";
-        } else {
-          span.textContent = char;
-        }
-
-        heading.appendChild(span);
-      });
-
-      animatedHeadings.push(heading);
+    AOS.init({
+      duration: 1200,
+      once: false,
+      mirror: true,
+      easing: "ease-out-cubic",
     });
+  }, []);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          entry.target.classList.toggle(
-            "global-heading-inview",
-            entry.isIntersecting
-          );
-        });
-      },
-      {
-        threshold: 0.28,
-        rootMargin: "0px 0px -12% 0px",
-      }
-    );
-
-    animatedHeadings.forEach((heading) => observer.observe(heading));
-
-    return () => {
-      observer.disconnect();
-      animatedHeadings.forEach((heading) => {
-        heading.classList.remove("global-heading-rtl", "global-heading-inview");
-        if (heading.dataset.originalHeading) {
-          heading.textContent = heading.dataset.originalHeading;
-          delete heading.dataset.originalHeading;
-        }
-      });
-    };
-  }, [loading]);
+  // Refresh AOS on route change
+  useEffect(() => {
+    AOS.refresh();
+  }, [location]);
 
   return (
     <>
       <NetworkBackground />
 
-      <div style={{ position: "relative", zIndex: 1 }}>
-        {loading && <Loader onFinish={() => setLoading(false)} />}
+      {loading && <Loader onFinish={() => setLoading(false)} />}
 
-        {!loading && (
-          <>
-            <Navbar />
-            <ScrollIndicator />
+      {!loading && (
+        <>
+          <Navbar />
 
-            <section id="hero"><Hero /></section>
-            <section id="about"><About /></section>
-            <section id="products"><Products /></section>
-            <section id="services"><Services /></section>
-            <section id="why"><WhyCareers /></section>
-            <section id="philosophy"><ParasymPhilosophy /></section>
-            <Blogs/>
-            <section id="contact"><ContactUs /></section>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/services" element={<Services />} />
+          </Routes>
 
-            <Footer />
-          </>
-        )}
-      </div>
+          <Footer />
+        </>
+      )}
     </>
   );
 }
