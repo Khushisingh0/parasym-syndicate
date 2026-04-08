@@ -1,10 +1,12 @@
 import styles from "../style/contactUs.module.css";
 import NetworkBackground from "../components/Shared/NetworkBackground";
+import BackHomeButton from "../components/Shared/BackHomeButton";
 
 export default function ContactUs() {
     return (
         <section id="contact" className={styles.wrapper}>
             <NetworkBackground />
+            <BackHomeButton />
 
 
             <div className={styles.container}>

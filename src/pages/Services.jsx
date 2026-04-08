@@ -1,17 +1,38 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "../style/services.module.css";
 import NetworkBackground from "../components/Shared/NetworkBackground";
+import BackHomeButton from "../components/Shared/BackHomeButton";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 export default function Services() {
   const [active, setActive] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
  useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const fromFooter = params.get("active");
+    if (
+      fromFooter === "cyber" ||
+      fromFooter === "ai" ||
+      fromFooter === "forensics" ||
+      fromFooter === "training" ||
+      fromFooter === "legal" ||
+      fromFooter === "strategic" ||
+      fromFooter === "geo"
+    ) {
+      setActive(fromFooter);
+    }
+  }, [location.search]);
+
   return (
     <section id="services" className={styles.wrapper}>
+      <BackHomeButton />
       <div className={styles.header}>
         <h1 className={styles.mainTitle}>Our Services</h1>
         <p className={styles.subTitle}>
@@ -78,7 +99,10 @@ export default function Services() {
 
           <button
             className={styles.close}
-            onClick={() => setActive(null)}
+            onClick={() => {
+              setActive(null);
+              if (location.search) navigate("/services", { replace: true });
+            }}
           >
             ✕
           </button>

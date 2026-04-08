@@ -21,19 +21,21 @@ export default function Footer() {
           <nav className={styles.links} aria-label="Footer navigation">
             <div className={styles.linkCol}>
               <h4>Services</h4>
-              <Link to="/services">Cybersecurity</Link>
-              <Link to="/services">Artificial Intelligence</Link>
-              <Link to="/services">Digital Forensics</Link>
-              <Link to="/services">Legal Support</Link>
-              <Link to="/services">Strategic Communications</Link>
-              <Link to="/services">Geopolitical Intelligence</Link>
-              <Link to="/services">Cybersecurity &amp; AI Training</Link>
+              <Link to="/services?active=cyber">Cybersecurity</Link>
+              <Link to="/services?active=ai">Artificial Intelligence</Link>
+              <Link to="/services?active=forensics">Digital Forensics</Link>
+              <Link to="/services?active=legal">Legal Support</Link>
+              <Link to="/services?active=strategic">Strategic Communications</Link>
+              <Link to="/services?active=geo">Geopolitical Intelligence</Link>
+              <Link to="/services?active=training">
+                Cybersecurity &amp; AI Training
+              </Link>
             </div>
 
             <div className={styles.linkCol}>
               <h4>Company</h4>
               <Link to="/about">About</Link>
-              <a href="#contact">Contact</a>
+              <Link to="/contact">Contact</Link>
               <Link to="/blogs">Blog</Link>
               <a href="#case-studies">Case Studies</a>
             </div>

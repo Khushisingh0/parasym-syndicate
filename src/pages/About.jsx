@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "../style/about.module.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import BackHomeButton from "../components/Shared/BackHomeButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,6 +41,7 @@ export default function About() {
 
   return (
     <section ref={ref} id="about" className={styles.section}>
+      <BackHomeButton />
       <div className={styles.container}>
         <div className={styles.leftContent} data-aos="fade-right">
           <h2 className={styles.title}>About</h2>

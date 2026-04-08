@@ -1,0 +1,43 @@
+.backBtn {
+  position: fixed;
+  top: 88px;
+  right: 22px;
+  z-index: 6500;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 140, 60, 0.7);
+  background: rgba(0, 0, 0, 0.6);
+  color: #ff8a2b;
+
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.backBtn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 140, 60, 0.15);
+  border-color: rgba(255, 140, 60, 0.9);
+}
+
+.backBtn:focus-visible {
+  outline: 2px solid rgba(255, 174, 106, 0.85);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .backBtn {
+    top: 74px;
+    right: 14px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+}
+

@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Services from "./pages/Services";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,11 @@ function App() {
     AOS.refresh();
   }, [location]);
 
+  // Always start from top on navigation
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname, location.search]);
+
   return (
     <>
       <NetworkBackground />
@@ -47,6 +53,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<ContactUs />} />
           </Routes>
 
           <Footer />
