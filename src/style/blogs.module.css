@@ -31,26 +31,42 @@
   z-index: 1;
 }
 
-
-
 .card {
   background: #141414;
   border: 1px solid #222;
-  transition: 0.3s ease;
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
   position: relative;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: #ff7a00;
+  transform: translateY(-8px);
+  border-color: rgba(255, 122, 0, 0.65);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 122, 0, 0.12),
+    0 0 36px rgba(255, 122, 0, 0.08);
 }
 
-
+.imageWrap {
+  overflow: hidden;
+  height: 240px;
+  background: #0a0a0a;
+}
 
 .image {
-  height: 240px;
+  height: 100%;
   background-size: cover;
   background-position: center;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
 }
 
 
@@ -88,6 +104,7 @@
 
 .viewBtn {
   background: transparent;
+  border-radius: 8px;
   border: 1px solid #ff7a00;
   color: #ff7a00;
   padding: 10px 20px;
@@ -108,6 +125,7 @@
 .viewBtn:hover {
   background: #ff7a00;
   color: #000;
+  box-shadow: 0 0 20px rgba(255, 122, 0, 0.35);
 }
 
 
@@ -117,32 +135,28 @@
   justify-content: flex-end;
   margin-top: 28px;
   position: relative;
-  z-index: 0;
-  pointer-events: none;
+  z-index: 2;
 }
-
-.seeMoreContainer a {
-  pointer-events: auto;
-}
-
-
 
 .seeMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: none;
   color: #ff7a00;
   font-size: 18px;
   font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
-  transition: 0.3s ease;
-  pointer-events: auto;
+  transition: opacity 0.3s ease, text-decoration 0.3s ease;
+  text-decoration: none;
+  margin-bottom: 30px;
 }
 
 .seeMoreBtn:hover {
-  text-decoration: underline;
-  background: transparent;
-  opacity: 0.8;
-  margin-bottom: 10px;
+  opacity: 0.9;
+  color: #cf7c2e;
 }
 
 
@@ -219,5 +233,20 @@
 
   .seeMoreContainer {
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .image {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .image {
+    transform: none;
   }
 }

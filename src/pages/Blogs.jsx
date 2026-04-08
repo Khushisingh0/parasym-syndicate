@@ -2,6 +2,7 @@ import BlogGrid from "../components/Blogs/BlogGrid";
 import styles from "../style/blogs.module.css";
 import BackHomeButton from "../components/Shared/BackHomeButton";
 import { useEffect, useMemo, useState } from "react";
+import AOS from "aos";
 import blogsData from "../data/blogsData";
 
 export default function Blogs() {
@@ -38,10 +39,21 @@ export default function Blogs() {
     return cleanedRemote.length ? cleanedRemote : blogsData;
   }, [remoteBlogs]);
 
+  useEffect(() => {
+    if (!loading) {
+      requestAnimationFrame(() => AOS.refresh());
+    }
+  }, [loading, blogsToShow.length]);
+
   return (
     <section className={styles.blogSection}>
       <BackHomeButton />
-      <h1 className={styles.blogTitle}>
+      <h1
+        className={styles.blogTitle}
+        data-aos="fade-down"
+        data-aos-duration="900"
+        data-aos-easing="ease-out-cubic"
+      >
         Blogs
       </h1>
 

@@ -102,19 +102,19 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 18px;
 }
 
 .row {
   display: flex;
-  gap: 20px;
+  gap: 16px;
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  padding: 14px 16px;
+  padding: 11px 14px;
   background: #0e0e0e;
   border: 1px solid rgba(255,140,40,0.3);
   border-radius: 10px;
@@ -135,9 +135,87 @@ textarea {
   resize: none;
 }
 
-button {
-  margin-top: 10px;
-  padding: 14px;
+/* ================= CUSTOM SERVICE SELECT ================= */
+
+.selectWrap {
+  position: relative;
+  width: 100%;
+}
+
+.selectTrigger {
+  width: 100%;
+  padding: 11px 14px;
+  background: #0e0e0e;
+  border: 1px solid rgba(255, 140, 40, 0.3);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.selectTrigger:focus {
+  border-color: #f0b35e;
+  box-shadow: 0 0 15px rgba(255, 140, 40, 0.3);
+}
+
+.selectTriggerPlaceholder {
+  color: #888;
+}
+
+.selectChevron {
+  flex-shrink: 0;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid rgba(255, 140, 40, 0.85);
+}
+
+.selectMenu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  margin: 0;
+  padding: 4px 0;
+  list-style: none;
+  background: #121212;
+  border: 1px solid rgba(255, 140, 40, 0.3);
+  border-radius: 8px;
+  /* ~4 visible rows; rest scroll — compact panel */
+  max-height: min(188px, 42vh);
+  overflow-y: auto;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.selectOption {
+  padding: 9px 14px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.selectOption:hover,
+.selectOption:focus-visible {
+  background: #ff7a18;
+  color: #0e0e0e;
+  outline: none;
+}
+
+.form button[type="submit"] {
+  margin-top: 6px;
+  padding: 11px 14px;
   background: #ff9f1a;
   border: none;
   border-radius: 10px;
@@ -146,11 +224,9 @@ button {
   transition: all 0.3s ease;
 }
 
-button:hover {
-  background: #ff9f1a;
-    background: #ff7a18;
-
-  box-shadow: 0 0 25px rgba(255,140,40,0.5);
+.form button[type="submit"]:hover {
+  background: #ff7a18;
+  box-shadow: 0 0 25px rgba(255, 140, 40, 0.5);
 }
 
 /* ================= ANIMATION ================= */

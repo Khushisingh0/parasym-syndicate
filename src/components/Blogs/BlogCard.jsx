@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../../style/blogs.module.css";
 
-const BlogCard = ({ blog }) => {
+const BlogCard = ({ blog, aosDelay = 0 }) => {
   const hasExternalUrl = Boolean(blog?.url);
   const cover = blog?.coverImage || "";
   const openExternal = () => {
@@ -12,6 +12,10 @@ const BlogCard = ({ blog }) => {
   return (
     <div
       className={styles.card}
+      data-aos="fade-up"
+      data-aos-duration="850"
+      data-aos-easing="ease-out-cubic"
+      data-aos-delay={aosDelay}
       onClick={hasExternalUrl ? openExternal : undefined}
       role={hasExternalUrl ? "link" : undefined}
       tabIndex={hasExternalUrl ? 0 : undefined}
@@ -24,10 +28,12 @@ const BlogCard = ({ blog }) => {
       }
       style={hasExternalUrl ? { cursor: "pointer" } : undefined}
     >
-      <div
-        className={styles.image}
-        style={{ backgroundImage: cover ? `url(${cover})` : undefined }}
-      />
+      <div className={styles.imageWrap}>
+        <div
+          className={styles.image}
+          style={{ backgroundImage: cover ? `url(${cover})` : undefined }}
+        />
+      </div>
 
       <div className={styles.content}>
         <h3>{blog.title}</h3>

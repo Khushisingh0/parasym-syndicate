@@ -44,9 +44,23 @@ export default function Footer() {
               <h4>Legal</h4>
               <a href="#privacy">Privacy Policy</a>
               <a href="#terms">Terms of Service</a>
-              <div className={styles.legalContact}>
-                <a href="mailto:info@parasym.in">info@parasym.in</a>
-                <a href="tel:+919079867865">9079867865</a>
+
+              <div className={styles.contactBlock}>
+              <h4 className={styles.contactHeading}>Contact</h4>
+                <a
+                  href="mailto:info@parasym.in"
+                  className={styles.contactLink}
+                >
+                  {/* <span className={styles.contactLinkLabel}>Email</span> */}
+                  info@parasym.in
+                </a>
+                <a
+                  href="tel:+919079867865"
+                  className={styles.contactLink}
+                >
+                  {/* <span className={styles.contactLinkLabel}>Phone</span> */}
+                  +91 90798 67865
+                </a>
               </div>
             </div>
           </nav>

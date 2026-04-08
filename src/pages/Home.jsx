@@ -29,7 +29,7 @@ const Home = () => {
         <Services />
       </section>
 
-      <section id="why">
+      <section id="why-us">
         <WhyCareers />
       </section>
 
