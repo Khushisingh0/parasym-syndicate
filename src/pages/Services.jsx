@@ -62,6 +62,12 @@ export default function Services() {
     onClick={() => setActive("strategic")}
   />
 
+  <ServiceCard
+    title="Geopolitical Intelligence & Strategic Risk Services"
+    animation="fade-up"
+    onClick={() => setActive("geo")}
+  />
+
 </div>
 
 
@@ -84,6 +90,7 @@ export default function Services() {
             {active === "training" && <Training />}
             {active === "legal" && <Legal />}
             {active === "strategic" && <Strategic />}
+            {active === "geo" && <Geopolitical />}
           </div>
 
         </div>
@@ -825,6 +832,120 @@ function Strategic() {
           <li>Long-term credibility protection</li>
         </ul>
       </Section>
+    </>
+  );
+}
+
+/* ================= GEOPOLITICAL ================= */
+function Geopolitical() {
+  return (
+    <>
+      <h2>Geopolitical Intelligence &amp; Strategic Risk Services</h2>
+      <p className={styles.intro}>
+        Understand global shifts before they impact your operations.
+        Parasym Syndicate delivers structured geopolitical intelligence to help
+        organizations anticipate conflicts, policy changes, and cross-border
+        risks. All insights are integrated with cyber, financial, and
+        information intelligence to provide a unified, decision-ready view.
+      </p>
+
+      <Section title="Geopolitical Risk Monitoring">
+        <p>
+         Early detection of conflicts, sanctions, and policy shifts through
+continuous tracking of global instability signals.
+
+        </p>
+        <p>Focus includes:</p>
+        <ul>
+          <li>Conflict indicators and escalation signals</li>
+          <li>Sanctions and regulatory developments</li>
+          <li>Political and economic disruption patterns</li>
+        </ul>
+      </Section>
+
+      <Section title="Cyber + Geopolitical Intelligence">
+        <p>
+          Integration of cyber threat intelligence with geopolitical
+          developments.
+        </p>
+        <p>This enables:</p>
+        <ul>
+          <li>Mapping cyber incidents to geopolitical triggers</li>
+          <li>Detection of state-linked and coordinated activity</li>
+          <li>Identification of hybrid and cross-domain threats</li>
+        </ul>
+      </Section>
+
+      <Section title="Country & Market Risk Intelligence">
+        <p>Structured assessment of country-level and regional risk exposure.</p>
+        <p>This includes:</p>
+        <ul>
+          <li>Country risk profiling and stability analysis</li>
+          <li>Regulatory and political environment assessment</li>
+          <li>Market entry and operational risk insights</li>
+        </ul>
+      </Section>
+
+      <Section title="Executive Intelligence Briefings">
+        <p>
+          Decision-focused intelligence designed for leadership and strategic
+          stakeholders.
+        </p>
+        <p>This includes:</p>
+        <ul>
+          <li>Concise, actionable intelligence briefings</li>
+          <li>Strategic foresight reports</li>
+          <li>
+            Risk-informed decision support during high-uncertainty periods
+          </li>
+        </ul>
+      </Section>
+
+      <Section title="Supply Chain & Trade Risk Analysis">
+        <p>
+          Identification of vulnerabilities across cross-border operations and
+          dependencies.
+        </p>
+        <p>This includes:</p>
+        <ul>
+          <li>Supply chain exposure and dependency mapping</li>
+          <li>Trade route and logistics risk assessment</li>
+          <li>Sanctions and restriction impact analysis</li>
+        </ul>
+      </Section>
+
+      <Section title="Scenario Simulation & Strategic Modeling">
+        <p>
+          Simulation of high-impact geopolitical scenarios and their
+          second-order effects.
+        </p>
+        <p>This includes:</p>
+        <ul>
+          <li>War, sanctions, and regime-change scenarios</li>
+          <li>Policy shift and economic disruption modeling</li>
+          <li>Operational and financial impact forecasting</li>
+        </ul>
+      </Section>
+
+      <Side title="Governance & Control">
+        <p>All geopolitical services are delivered under:</p>
+        <ul>
+          <li>Strict legal and regulatory compliance</li>
+          <li>Non-involvement in political influence or manipulation</li>
+          <li>Human-led intelligence analysis</li>
+          <li>Accountability, transparency, and auditability</li>
+        </ul>
+      </Side>
+
+      <Side title="Outcome">
+        <p>Parasym enables organizations to:</p>
+        <ul>
+          <li>Anticipate geopolitical risks before escalation</li>
+          <li>Align strategy with global political and economic shifts</li>
+          <li>Reduce exposure to cross-border and regulatory disruptions</li>
+          <li>Make informed decisions under uncertainty</li>
+        </ul>
+      </Side>
     </>
   );
 }

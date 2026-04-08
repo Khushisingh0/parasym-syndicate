@@ -205,6 +205,60 @@
   color: #ffae6a;
 }
 
+/* ================= GEO (Screenshot mini-cards inside modal) ================= */
+
+.geoCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+}
+
+.geoCard {
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: linear-gradient(160deg, rgba(18, 18, 18, 0.92), rgba(26, 15, 6, 0.82));
+  border: 1px solid rgba(255, 140, 60, 0.28);
+}
+
+.geoCardTitle {
+  width: 100%;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 140, 60, 0.45);
+  color: #ffae6a;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  margin-bottom: 12px;
+}
+
+.geoCardBody p {
+  margin: 0 0 10px;
+  color: #d9d9d9;
+  font-size: 13.5px;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.geoCardLabel {
+  color: #cfcfcf;
+  font-size: 12.5px;
+  margin-bottom: 8px;
+  opacity: 0.95;
+}
+
+.geoCardBody ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.geoCardBody li {
+  margin-bottom: 7px;
+  font-size: 13px;
+  color: #cfcfcf;
+}
+
 /* ================= TEXT ================= */
 
 .page p {
@@ -297,6 +351,10 @@
   .section,
   .sideBox {
     padding: 20px;
+  }
+
+  .geoCardsGrid {
+    grid-template-columns: 1fr;
   }
 }
 

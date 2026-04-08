@@ -29,12 +29,13 @@ export default function ContactUs() {
 
                         <select required>
                             <option value="">Select Service</option>
-                            <option>Cybersecurity assessments</option>
-                            <option> Vulnerability assessment & penetration testing</option>
-                            <option>Security architecture review</option>
-                            <option>Incident readiness & response support</option>
-                            <option>Threat intelligence & risk analysis</option>
-                            <option> Hybrid cyber physical risk advisory</option>
+                            <option>Cybersecurity services</option>
+                            <option> Artificial Intelligence services</option>
+                            <option>CyberCrime Investment & Digital Forensics</option>
+                            <option>CyberSecurity & Artificial Intelligence Training</option>
+                            <option>Legal Support Services</option>
+                            <option>Strategic Communications & Advisory Services</option>
+                            <option>Geopolitical Intelligence & Risk Analysis</option>
                         </select>
 
                         <textarea
