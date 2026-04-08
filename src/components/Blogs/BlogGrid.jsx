@@ -3,15 +3,17 @@ import BlogCard from "./BlogCard";
 import { Link } from "react-router-dom";
 import styles from "../../style/blogs.module.css";
 
-const BlogGrid = ({ limit }) => {
-  const displayBlogs = limit
-    ? blogsData.slice(0, limit)
-    : blogsData;
+const BlogGrid = ({ limit, blogs, loading }) => {
+  const sourceBlogs = Array.isArray(blogs) ? blogs : blogsData;
+  const displayBlogs = limit ? sourceBlogs.slice(0, limit) : sourceBlogs;
 
   return (
     <div className={styles.wrapper}>
 
       <div className={styles.grid}>
+        {!displayBlogs.length && loading ? (
+          <div style={{ color: "#fff", opacity: 0.8 }}>Loading blogs…</div>
+        ) : null}
         {displayBlogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}

@@ -14,7 +14,8 @@ const blogsData = [
     title: "BIOGRAPHY OF A BEAST: The Engineering of Monsters",
     subtitle: "POST 2: THE SOUL SCRUB",
     date: "Oct 22, 2025",
-    coverImage: blog1,   
+    coverImage: blog1,
+    url: "https://medium.com/@ghostoflucifer/biography-of-a-beast-the-engineering-of-monsters-16bcd3dd3867",
 
     content: [
       {
@@ -41,6 +42,7 @@ const blogsData = [
   subtitle: "POST 1: THE HUNT FOR THE PERFECT PAWN",
   date: "Sep 20, 2025",
   coverImage: blog2,
+  url: "https://medium.com/@ghostoflucifer/biography-of-a-beast-the-engineering-of-monsters-fd85718b4162",
 
   content: [
     {
@@ -71,6 +73,7 @@ const blogsData = [
   subtitle: "The Handler’s Handshake: When Control Becomes Invisible",
   date: "Sep 16, 2025",
   coverImage: blog3,
+  url: "https://medium.com/@ghostoflucifer/mind-games-the-spy-tradecraft-they-dont-put-in-the-movies-part-3-e90eea0e3d9e",
 
   content: [
     {
@@ -102,6 +105,7 @@ const blogsData = [
     "Navigating the Fine Lines of Intelligence, Geopolitics, and Security in the Emerging World Order",
   date: "Jul 29, 2025",
   coverImage: blog4,
+  url: "https://medium.com/@ghostoflucifer/decoding-india-the-security-architecture-of-a-rising-power-f38d045cd4be",
   content: [
     {
       type: "paragraph",
@@ -139,6 +143,7 @@ const blogsData = [
   subtitle: "PART 1 OF 10: The Black Bag Psyop Playbook",
   date: "Jul 14, 2025",
   coverImage: blog5,
+  url: "https://medium.com/@ghostoflucifer/the-art-of-the-devil-psychological-warfares-manual-e1dd21128eb7",
 
   content: [
     {
@@ -181,6 +186,7 @@ const blogsData = [
   subtitle: "What Is Psychological Espionage?",
   date: "Jul 1, 2025",
   coverImage: blog6,
+  url: "https://medium.com/@ghostoflucifer/mind-games-the-spy-tradecraft-they-dont-put-in-the-movies-737011323a50",
 
   content: [
     {
@@ -223,6 +229,7 @@ const blogsData = [
   subtitle: "A Tactical Guide to Screwing Up at the Highest Levels",
   date: "Jul 7, 2025",
   coverImage: blog7,
+  url: "https://medium.com/@ghostoflucifer/global-clown-fiesta-intelligence-fail-101-6aba52f02b41",
 
   content: [
     {
@@ -265,6 +272,7 @@ const blogsData = [
   subtitle: "PART 2 OF 10: The Fractured Mirror Protocol",
   date: "Jul 24, 2025",
   coverImage: blog8,
+  url: "https://medium.com/@ghostoflucifer/the-art-of-the-devil-part-2-ed0ba08fb3b5",
 
   content: [
     {
@@ -307,6 +315,7 @@ const blogsData = [
   subtitle: "Welcome to the Unofficial Handbook of Emotional Espionage",
   date: "Jul 10, 2025",
   coverImage: blog9,
+  url: "https://medium.com/@ghostoflucifer/mind-games-the-spy-tradecraft-they-dont-put-in-the-movies-part-2-7bc4b560c51c",
 
   content: [
     {
