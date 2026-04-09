@@ -8,8 +8,8 @@ const sections = [
   { id: "services", label: "Services" },
   { id: "why-us", label: "Why Us" },
   { id: "philosophy", label: "Philosophy" },
-  { id: "blogs", label: "Blogs" },
-  { id: "case-studies", label: "Case Studies" },
+  // { id: "blogs", label: "Blogs" },
+  // { id: "case-studies", label: "Case Studies" },
   { id: "contact", label: "Contact" },
   { id: "footer", label: "Footer" },
 ];

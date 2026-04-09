@@ -120,15 +120,6 @@
   padding-bottom: 100px;
   isolation: isolate;     
 }
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at top, #1a1a1a, #000000);
-  z-index: 5000;
-  overflow-y: auto;
-  padding-bottom: 100px;
-  isolation: isolate;
-}
 
 .overlay > :first-child {
   position: absolute;
@@ -142,15 +133,42 @@
   z-index: 2;
 }
 
-.close {
-  z-index: 3;
+.overlayHeader {
+  position: sticky;
+  top: 0;
+  z-index: 7000;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.overlayBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.overlayBrand img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.35));
+}
+
+.overlayTitle {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #ff8a2b;
+}
 
 .close {
   position: fixed;
-  top: 40px;             
-  right: 60px;            
+  top: calc(var(--nav-h) + 14px);
+  right: 16px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -183,9 +201,21 @@
 
 .page {
   max-width: 1100px;
-  margin: 140px auto 80px;
+  margin: 120px auto 80px;
   padding: 0 20px;
   line-height: 1.8;
+}
+
+.overlayFooter {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 34px 20px 22px;
+  color: #9ca3af;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+  text-align: center;
 }
 
 
@@ -331,9 +361,6 @@
   }
 
   .close {
-    position: sticky;
-    top: 18px;
-    right: 18px;
     width: 42px;
     height: 42px;
     font-size: 18px;
@@ -377,8 +404,8 @@
   }
 
   .close {
-    top: 15px;
-    right: 15px;
+    top: calc(var(--nav-h) + 12px);
+    right: 12px;
     width: 38px;
     height: 38px;
     font-size: 16px;

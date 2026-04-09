@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../../style/blogs.module.css";
 
-const BlogCard = ({ blog, aosDelay = 0 }) => {
+const BlogCard = ({ blog, aosDelay = 0, aosType = "fade-up" }) => {
   const hasExternalUrl = Boolean(blog?.url);
   const cover = blog?.coverImage || "";
   const openExternal = () => {
@@ -12,7 +12,7 @@ const BlogCard = ({ blog, aosDelay = 0 }) => {
   return (
     <div
       className={styles.card}
-      data-aos="fade-up"
+      data-aos={aosType}
       data-aos-duration="850"
       data-aos-easing="ease-out-cubic"
       data-aos-delay={aosDelay}

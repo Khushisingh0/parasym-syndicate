@@ -5,6 +5,7 @@ import NetworkBackground from "../components/Shared/NetworkBackground";
 import BackHomeButton from "../components/Shared/BackHomeButton";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import logo from "../assets/logo.png";
 
 export default function Services() {
   const [active, setActive] = useState(null);
@@ -97,12 +98,20 @@ export default function Services() {
 
           <NetworkBackground />
 
+          <header className={styles.overlayHeader}>
+            <div className={styles.overlayBrand} aria-label="Parasym Syndicate">
+              <img src={logo} alt="Parasym Syndicate" />
+              <span className={styles.overlayTitle}>Services</span>
+            </div>
+          </header>
+
           <button
             className={styles.close}
             onClick={() => {
               setActive(null);
               if (location.search) navigate("/services", { replace: true });
             }}
+            aria-label="Close service details"
           >
             ✕
           </button>
@@ -117,6 +126,9 @@ export default function Services() {
             {active === "geo" && <Geopolitical />}
           </div>
 
+          <footer className={styles.overlayFooter}>
+            <span>© 2026 Parasym Syndicate. All rights reserved.</span>
+          </footer>
         </div>
       )}
 

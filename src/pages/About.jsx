@@ -5,6 +5,8 @@ import styles from "../style/about.module.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import BackHomeButton from "../components/Shared/BackHomeButton";
+import aboutImg from "../assets/abt.png";
+import platformImg from "../assets/abt2.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,30 +68,26 @@ export default function About() {
           </p>
         </div>
 
-        {/* <div className={styles.visualWrap} data-aos="fade-left">
-          <div className={`${styles.cyberVisual} ${styles.visualPrimary}`}>
-            <div className={styles.gridPattern} />
-            <div className={styles.radarRing} />
-            <div className={`${styles.node} ${styles.nodeA}`} />
-            <div className={`${styles.node} ${styles.nodeB}`} />
-            <div className={`${styles.node} ${styles.nodeC}`} />
-            <div className={styles.packetStream}>
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className={styles.visualOverlay} />
-            <div className={styles.scanLine} />
-            <span className={`${styles.chip} ${styles.chipTop}`}>THREAT MAP</span>
-            <span className={`${styles.chip} ${styles.chipBottom}`}>ZERO TRUST</span>
-          </div>
-        </div> */}
+        <div className={styles.visualWrap} data-aos="fade-left">
+          <img
+            className={styles.sideImage}
+            src={aboutImg}
+            alt="About visual"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
 
       <div className={`${styles.container} ${styles.platformRow}`}>
         <div className={styles.visualWrap} data-aos="fade-right">
-          
+          <img
+            className={styles.sideImage}
+            src={platformImg}
+            alt="Platform visual"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <div className={styles.rightContent} data-aos="fade-left">

@@ -10,12 +10,12 @@ import NetworkBackground from "./components/Shared/NetworkBackground";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Blogs from "./pages/Blogs";
+// import Blogs from "./pages/Blogs";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
-import BlogDetails from "./pages/BlogDetails";
-import CaseStudies from "./pages/CaseStudies";
-import CaseStudyDetails from "./pages/CaseStudyDetails";
+// import BlogDetails from "./pages/BlogDetails";
+// import CaseStudies from "./pages/CaseStudies";
+// import CaseStudyDetails from "./pages/CaseStudyDetails";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -54,10 +54,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/blogs/:id" element={<BlogDetails />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/case-studies/:id" element={<CaseStudyDetails />} />
+            {/* <Route path="/blogs" element={<Blogs />} /> */}
+            {/* <Route path="/blogs/:id" element={<BlogDetails />} /> */}
+            {/* <Route path="/case-studies" element={<CaseStudies />} /> */}
+            {/* <Route path="/case-studies/:id" element={<CaseStudyDetails />} /> */}
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<ContactUs />} />
           </Routes>

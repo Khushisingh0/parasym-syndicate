@@ -5,9 +5,9 @@ import Products from "./Product";
 import Services from "./Services";
 import WhyCareers from "./WhyCareers";
 import ParasymPhilosophy from "./ParasymPhilosophy";
-import BlogGrid from "../components/Blogs/BlogGrid";
+// import BlogGrid from "../components/Blogs/BlogGrid";
 import ContactUs from "./ContactUs";
-import CaseStudiesGrid from "../components/CaseStudies/CaseStudiesGrid";
+// import CaseStudiesGrid from "../components/CaseStudies/CaseStudiesGrid";
 
 const Home = () => {
   return (
@@ -38,14 +38,14 @@ const Home = () => {
         <ParasymPhilosophy />
       </section>
 
-      <section id="blogs">
+      {/* <section id="blogs">
         <h2 style={{ fontSize: "62px", textAlign: "center", color: "#ff7a00" }}>
           Blogs
         </h2>
         <BlogGrid limit={3} />
-      </section>
+      </section> */}
 
-      <section id="case-studies">
+      {/* <section id="case-studies">
         <h2
           style={{ fontSize: "62px", textAlign: "center", color: "#ff7a00" }}
           data-aos="fade-up"
@@ -55,7 +55,7 @@ const Home = () => {
           Case Studies
         </h2>
         <CaseStudiesGrid limit={3} />
-      </section>
+      </section> */}
 
 
       <section id="contact">

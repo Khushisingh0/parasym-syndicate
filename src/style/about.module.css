@@ -70,6 +70,16 @@
   justify-self: center;
 }
 
+.sideImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 560px;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 32px rgba(0, 0, 0, 0.55));
+}
+
 .cyberVisual {
   position: relative;
   isolation: isolate;
@@ -436,6 +446,10 @@
   .container {
     grid-template-columns: 1fr;
     gap: 26px;
+  }
+
+  .sideImage {
+    max-width: 520px;
   }
 
   .rightContent {

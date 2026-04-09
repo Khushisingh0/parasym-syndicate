@@ -18,6 +18,7 @@ const BlogGrid = ({ limit, blogs, loading }) => {
           <BlogCard
             key={blog.id ?? blog.url ?? `blog-${index}`}
             blog={blog}
+            aosType={index % 2 === 0 ? "fade-up" : "fade-down"}
             aosDelay={index * 130}
           />
         ))}

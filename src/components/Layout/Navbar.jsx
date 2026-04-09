@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../../style/navbar.module.css";
 import logo from "../../assets/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -53,8 +62,8 @@ export default function Navbar() {
               <li onClick={() => scrollToSection("services")}>SERVICES</li>
               <li onClick={() => scrollToSection("why-us")}>WHY US</li>
               <li onClick={() => scrollToSection("philosophy")}>PHILOSOPHY</li>
-              <li onClick={() => scrollToSection("blogs")}>BLOGS</li>
-              <li onClick={() => scrollToSection("case-studies")}>CASE STUDIES</li>
+              {/* <li onClick={() => scrollToSection("blogs")}>BLOGS</li> */}
+              {/* <li onClick={() => scrollToSection("case-studies")}>CASE STUDIES</li> */}
               <li onClick={() => scrollToSection("contact")}>CONTACT</li>
             </ul>
           </aside>
