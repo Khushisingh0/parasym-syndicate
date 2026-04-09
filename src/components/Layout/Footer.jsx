@@ -36,7 +36,7 @@ export default function Footer() {
               <h4>Company</h4>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
-              <Link to="/blogs">Blog</Link>
+              <Link to="#">Blog</Link>
               <a href="#case-studies">Case Studies</a>
             </div>
 
