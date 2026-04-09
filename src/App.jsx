@@ -14,6 +14,8 @@ import Blogs from "./pages/Blogs";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
 import BlogDetails from "./pages/BlogDetails";
+import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetails from "./pages/CaseStudyDetails";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -54,6 +56,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:id" element={<BlogDetails />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/:id" element={<CaseStudyDetails />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<ContactUs />} />
           </Routes>

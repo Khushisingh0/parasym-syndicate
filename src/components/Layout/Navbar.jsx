@@ -49,10 +49,12 @@ export default function Navbar() {
             <ul className={styles.menuList}>
               <li onClick={() => scrollToSection("hero")}>START</li>
               <li onClick={() => scrollToSection("about")}>ABOUT US</li>
-              <li onClick={() => scrollToSection("product")}>PRODUCT</li>
+              <li onClick={() => scrollToSection("products")}>PRODUCT</li>
               <li onClick={() => scrollToSection("services")}>SERVICES</li>
               <li onClick={() => scrollToSection("why-us")}>WHY US</li>
               <li onClick={() => scrollToSection("philosophy")}>PHILOSOPHY</li>
+              <li onClick={() => scrollToSection("blogs")}>BLOGS</li>
+              <li onClick={() => scrollToSection("case-studies")}>CASE STUDIES</li>
               <li onClick={() => scrollToSection("contact")}>CONTACT</li>
             </ul>
           </aside>

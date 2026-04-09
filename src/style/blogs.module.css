@@ -1,8 +1,9 @@
 
 
 .blogSection {
-  padding: 100px 20px;
+  padding: var(--section-pad-y) var(--page-pad-x);
   background: #0f0f0f;
+  position: relative;
 }
 
 .wrapper {
@@ -14,11 +15,11 @@
 
 .blogTitle {
   text-align: center;
-  font-size: 64px; 
+  font-size: var(--title-xl);
   font-weight: 800;
   color: #ff7a00;
   letter-spacing: 1px;
-  margin-bottom: 70px;
+  margin-bottom: clamp(34px, 6vw, 70px);
 }
 
 
@@ -82,6 +83,10 @@
   font-size: 20px;
   margin-bottom: 10px;
   color: #fff;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .subtitle {
@@ -99,6 +104,7 @@
   margin-top: 20px;
   position: relative;
   z-index: 3;
+  gap: 12px;
 }
 
 
@@ -159,6 +165,31 @@
   color: #cf7c2e;
 }
 
+/* ======= Close (Cross) Button ======= */
+.closeBtn {
+  position: absolute;
+  top: calc(var(--nav-h) + 18px);
+  right: 16px;
+  width: clamp(38px, 10vw, 52px);
+  height: clamp(38px, 10vw, 52px);
+  border-radius: 50%;
+  border: 2px solid #ff7a00;
+  background: rgba(0, 0, 0, 0.85);
+  color: #ff7a00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(16px, 4.6vw, 22px);
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 6000;
+}
+
+.closeBtn:hover {
+  background: #ff7a00;
+  color: #000;
+}
+
 
 
 .detailPage {
@@ -166,6 +197,7 @@
   margin: 0 auto;
   padding: 120px 20px 80px;
   color: #ddd;
+  position: relative;
 }
 
 .detailPage h1 {
@@ -186,6 +218,29 @@
   color: #999;
 }
 
+.metaBlock {
+  margin: 14px 0 26px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 122, 0, 0.22);
+  background: rgba(10, 10, 10, 0.55);
+}
+
+.metaRow {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #d9d9d9;
+}
+
+.metaLabel {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.metaValue {
+  color: #d9d9d9;
+}
+
 .detailImage {
   width: 100%;
   margin: 30px 0;
@@ -194,6 +249,7 @@
 .detailContent p {
   line-height: 1.8;
   margin-bottom: 22px;
+  text-align: justify;
 }
 
 .detailContent h2 {
@@ -233,6 +289,13 @@
 
   .seeMoreContainer {
     justify-content: center;
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: calc(var(--nav-h) + 14px);
+    right: 12px;
+    z-index: 9999;
   }
 }
 

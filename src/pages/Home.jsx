@@ -7,6 +7,7 @@ import WhyCareers from "./WhyCareers";
 import ParasymPhilosophy from "./ParasymPhilosophy";
 import BlogGrid from "../components/Blogs/BlogGrid";
 import ContactUs from "./ContactUs";
+import CaseStudiesGrid from "../components/CaseStudies/CaseStudiesGrid";
 
 const Home = () => {
   return (
@@ -37,12 +38,23 @@ const Home = () => {
         <ParasymPhilosophy />
       </section>
 
-            <section id="blogs">
-        <h2 style={{fontSize: "62px", textAlign: "center", color: "#ff7a00" }}>
-Blogs        </h2>
-
+      <section id="blogs">
+        <h2 style={{ fontSize: "62px", textAlign: "center", color: "#ff7a00" }}>
+          Blogs
+        </h2>
         <BlogGrid limit={3} />
+      </section>
 
+      <section id="case-studies">
+        <h2
+          style={{ fontSize: "62px", textAlign: "center", color: "#ff7a00" }}
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-easing="ease-out-cubic"
+        >
+          Case Studies
+        </h2>
+        <CaseStudiesGrid limit={3} />
       </section>
 
 

@@ -1,6 +1,6 @@
 import styles from "../style/parasymPhilosophy.module.css";
-import img1 from "../assets/logo.png";
-import img2 from "../assets/logo.png";
+import img1 from "../assets/img1.png";
+import img2 from "../assets/img1.jpeg";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect} from "react";
